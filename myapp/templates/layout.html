@@ -36,11 +36,11 @@
     </nav>
     <hr>
     {% if messages %}
-        <ul class="messages">
+        <h4 class="messages">
             {% for message in messages %}
-                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                <p{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</p>
             {% endfor %}
-        </ul>
+        </h4>
     {% endif %}
     {% block content %}
     

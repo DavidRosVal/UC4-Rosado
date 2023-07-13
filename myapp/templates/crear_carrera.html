@@ -1,8 +1,25 @@
 {% extends 'layout.html' %}
 
 {% block title %}
-    Agregar Carreras
+    Agregar carrera
 {% endblock title %}
 {% block content %}
-Agregar Carreras
+Agregar carrera
+<form action="{% url 'crear-carrera' %}" method="POST">
+{% csrf_token %}
+    <input type="text" name="name" placeholder="name">
+    <input type="text" name="shortname" placeholder="shortname">
+
+    <label for="image">Upload image</label>
+    <input type="file" name="image">
+
+    <label for="state">state</label>
+    <select name="state">
+        <option value="1">Si</option>
+        <option value="0">No</option>
+    <input type="submit" value="Agregar">
+</form>
+
+
+
 {% endblock content %}

@@ -1,8 +1,20 @@
 {% extends 'layout.html' %}
 
 {% block title %}
-    Listado de Carreras
+    Listado de carreras
 {% endblock title %}
 {% block content %}
-Listado de Carreras
+    Listado de carreras
+    <ul>
+        {% for carrera in  carreras%}
+            <li>
+                <h4>
+                    {{carrera.name}} - {{carrera.shortname}} - {{carrera.state}} - {{carrera.image}} 
+                </h4>
+                <a href="{% url 'eliminar-carrera' id=carrera.idcareer %}">eliminar</a>
+            |</li>
+        {%empty%}
+        No hay carreras
+    {% endfor %}
+    </ul>
 {% endblock content %}

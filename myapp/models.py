@@ -9,3 +9,10 @@ class Course(models.Model):
     hour = models.IntegerField()
     credits = models.IntegerField()
     state = models.BooleanField(default=True)
+
+class Career(models.Model):
+    idcareer = models.AutoField(primary_key=True)
+    name = models.CharField(max_length=100)
+    shortname = models.CharField(max_length=90)
+    image = models.ImageField(default='null')
+    state = models.BooleanField(default=True)
